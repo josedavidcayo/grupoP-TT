@@ -1,19 +1,22 @@
 from modelo.JugadorDAO import JugadorDAO
 from modelo.Jugador import Jugador
 
-player = Jugador()
-
-player.setNickName("David_AA")
-player.setPlayedTime( 15 )
-player.setScore( 0 )
-player.setDifficulty( 1)
-
 jugadorDAO = JugadorDAO()
-jugadorDAO.crearTablaJugadores()
-jugadorDAO.setJugador( player )
 
-jugadorDAO.addJugador()
+print ("--------------------------------")
+print ("Listar todos los jugadores. ")
+print ("--------------------------------")
+jugadores = jugadorDAO.listarJugadores()
+for jugador in jugadores:
+    print( str(jugador.getId()) + " " +jugador.getNickName() +" ha jugado "+ str(jugador.getPlayedTime()))
+    
+print ("--------------------------------")
+print ("Jugador por id 1")
+print ("--------------------------------")
+print (jugadorDAO.getJugadorById(1).getNickName())
 
-jugador1 = jugadorDAO.getJugadorById(0)
+print ("--------------------------------")
+print ("Jugador por nickname")
+print ("--------------------------------")
+print (jugadorDAO.getJugadorByNickName("Maurinho").getId())
 
-print( jugador1.getNickName() )
