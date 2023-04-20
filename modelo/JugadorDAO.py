@@ -3,11 +3,13 @@ from modelo.Jugador import Jugador
 
 class JugadorDAO:
     def __init__(self):
-        self._conexion = ConexionDB('sudokuMDI.db')
+        self._conexion = ConexionDB('./db/sudokuMDI.db')
         self.con = self._conexion.getConexion()
         self.cursor = self.con.cursor()
+        self.crearTablaJugadores()  #Creamos tabla en caso de que no exista.
 
         self.jugador = None
+
 
     def crearTablaJugadores(self):
         cursor = self.con.cursor()
@@ -37,15 +39,14 @@ class JugadorDAO:
             WHERE id =?
         """, (id,))
         for row in cursor:
-            jugador = Jugador()
-            jugador.setId(row[0])
-            jugador.setNickName(row[1])
-            jugador.setPlayedTime(row[2])
-            jugador.setScore(row[3])
-            jugador.setDifficulty(row[4])
-            return jugador
+            self.jugador = Jugador()
+            self.jugador.setId(row[0])
+            self.jugador.setNickName(row[1])
+            self.jugador.setPlayedTime(row[2])
+            self.jugador.setScore(row[3])
+            self.jugador.setDifficulty(row[4])
+            return self.jugador
         
-
     
     def updateJugador(self):
         cursor = self.con.cursor()
@@ -83,6 +84,26 @@ class JugadorDAO:
     def setJugador(self, jugador):
         self.jugador = jugador
 
+    def getJugadorByNickName(self, nickname):
+        cursor = self.con.cursor()
+        cursor.execute("""
+            SELECT * FROM jugadores
+            WHERE  nickName=?
+        """, (nickname,))
+        
+        fila = cursor.fetchone()
+
+        if fila is None:
+            print("No se encontro el jugador: " + nickname)
+        else:
+            self.jugador = Jugador()
+            self.jugador.setId(fila[0])
+            self.jugador.setNickName(fila[1])
+            self.jugador.setPlayedTime(fila[2])
+            self.jugador.setScore(fila[3])
+            self.jugador.setDifficulty(fila[4])
+            return self.jugador
+            
 
 # Cerrar la conexión
     def cerrarConexion(self):
