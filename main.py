@@ -21,6 +21,8 @@ print ("--------------------------------")
 print (jugadorDAO.getJugadorByNickName("Maurinho").getId())
 
 
+jugador1 = jugadorDAO.getJugadorById(5)
+
 print( jugador1.getNickName() ) #Me da error esta instruccion
 
 #Abra que crear clases para cada tipo de sudoku? y para cada difultad?
