@@ -20,3 +20,9 @@ print ("Jugador por nickname")
 print ("--------------------------------")
 print (jugadorDAO.getJugadorByNickName("Maurinho").getId())
 
+
+print( jugador1.getNickName() ) #Me da error esta instruccion
+
+#Abra que crear clases para cada tipo de sudoku? y para cada difultad?
+#Soy el agustin, perdon que pregunte boludeces pero todavia estoy aprendiendo python :facepalm:
+

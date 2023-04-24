@@ -6,6 +6,7 @@ setup(
     description="Sudoku multiplataforma.",
     install_requires=[
         "pygame",
-        "sqlite3"
+        "sqlite3",
+        "numpy"
     ]
 )
