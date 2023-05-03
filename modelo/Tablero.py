@@ -7,7 +7,7 @@ class Tablero:
 
     def generarTablero(self):
         self.llenarTodasLasCajas()
-        self.eliminarElementos(20)
+        self.eliminarElementos(3)
 
     def llenarTodasLasCajas(self):
         flag = [False for _ in range(9)]
