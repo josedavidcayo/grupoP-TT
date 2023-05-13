@@ -1,0 +1,4 @@
+
+CairoSVG==2.7.0
+pygame==2.3.0
+
