@@ -107,7 +107,7 @@ class Celda():
 		return str(self.__valor) if self.__valor else "_" 
 
 class Sudoku():
-	"""Un sudoku contiene un tablero de celdas de tamaño 9×9 y una pila
+	"""Un sudoku contiene un tablero de celdas de tamaño 9*9 y una pila
 	 de jugadas. El tablero puede tener tanto celdas fijas como 
 	 modificables. El invariante de la clase especifica que cada celda 
 	 del tablero y cada elemento de la lista de opciones de la celda 
@@ -250,8 +250,8 @@ class Sudoku():
 		devuelve True."""
 		if self.__jugadas != []:
 			jugada = self.__jugadas.pop()
-			for tupla in jugada:
-				self.__tablero[tupla[0]][tupla[1]] = tupla[2]
+			for jugadas in jugada:
+				self.__tablero[jugadas[0]][jugadas[1]] = jugadas[2]
 			return True
 		return False
 				  
@@ -280,11 +280,8 @@ def main():
 	sudoku = Sudoku()
 	opcion = ""
 	os.system("clear")
-	mensaje = "Sudoku en Python: \n"\
-	+"Interfaz de juego desarrollada por César Aguilera,\n"\
-	+"Tablero generado gracias al"\
-	+ """ "Sudoku Generator and Solver" """\
-	+ "de David Bau.\n"""
+	mensaje = "Sudoku en Python: \n"
+ 
 	while(not sudoku.finalizado() and opcion!= "h"):
 		print (mensaje)
 		print (sudoku)
@@ -338,3 +335,5 @@ def main():
 	if opcion == "h": print ("¡Adiós!")
 	else: print ("Sudoku completado. Enhorabuena.")
 	return 0
+
+main()
