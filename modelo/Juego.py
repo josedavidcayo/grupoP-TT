@@ -1,7 +1,7 @@
 import pygame
-from Tablero import Tablero
-from Caja import Caja
-import util
+from modelo.Tablero import Tablero
+from modelo.Caja import Caja
+import util.util as util
 
 
 class Juego:

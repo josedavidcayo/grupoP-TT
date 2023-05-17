@@ -1,15 +1,14 @@
 import pygame
 import time
-import util
+import util.util as util
 import os
-#import cairosvg
-from Juego import Juego
+from modelo.Juego import Juego
 
 
 def redibujarVentana(ventana, tablero, tiempo):
     ventana.fill((0, 0, 0))
 
-    bgVentana = pygame.image.load('sud-base.png')
+    bgVentana = pygame.image.load('img/sud-base.png')
     bgVentana = pygame.transform.scale(bgVentana, ventana.get_size())
     ventana.blit(bgVentana, (0, 0))
 
@@ -74,6 +73,3 @@ def main():
 
 
 
-pygame.init()
-main()
-pygame.quit()
