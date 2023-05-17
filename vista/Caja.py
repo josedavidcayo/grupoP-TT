@@ -1,13 +1,11 @@
 import pygame
 import os
+import vista.Color as Color
 
 class Caja:
     filas = 9
     columnas = 9
-    colorGris = (128, 128, 128)
-    colorNegro = (0, 0, 0)
-    colorRojo = (255, 0, 0)
-    colorBlanco = (255, 255, 255)
+    
 
     def __init__(self, valor, fila, columna, ancho, altura):
         self.valor = valor  # Valor actual de la caja
@@ -30,10 +28,10 @@ class Caja:
         y = self.fila * espacio
 
         if self.temp != 0 and self.valor == 0:
-            texto = fuente.render(str(self.temp), 1, self.colorGris)
+            texto = fuente.render(str(self.temp), 1, Color.gris)
             tablero_surface.blit(texto, (x + 3, y + 3))  # Dibujar el número pequeño en la esquina superior izquierda
         elif self.valor != 0:
-            texto = fuente.render(str(self.valor), 1, self.colorNegro)
+            texto = fuente.render(str(self.valor), 1, Color.negro)
             # Ajustar las coordenadas de dibujo para centrar el número en la caja
             texto_x = x + (espacio - texto.get_width()) // 2
             texto_y = y + (espacio - texto.get_height()) // 2
@@ -44,10 +42,8 @@ class Caja:
             caja_y = self.fila * espacio
             caja_ancho = self.ancho / 9
             caja_alto = self.altura / 9
-            pygame.draw.rect(tablero_surface, self.colorRojo, (caja_x, caja_y, caja_ancho, caja_alto), 3)
-
-
-
+            pygame.draw.rect(tablero_surface, Color.rojo, (caja_x, caja_y, caja_ancho, caja_alto), 3)
+    
 
     def establecerValor(self, valor):
         self.valor = valor

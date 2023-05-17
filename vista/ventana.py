@@ -16,6 +16,9 @@ def redibujarVentana(ventana, tablero, tiempo):
     tablero_surface.fill((255, 255, 255))
     tablero.dibujar(tablero_surface)
 
+    #Btn cerrar
+    #Agregar img de boton cerrar.
+
     ventana.blit(tablero_surface, (50, 130))
 
     rutaActual = os.path.dirname(os.path.abspath(__file__))

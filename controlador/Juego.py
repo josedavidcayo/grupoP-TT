@@ -29,8 +29,9 @@ class Juego:
                 grosor = 4
             else:
                 grosor = 1
-            pygame.draw.line(tablero_surface, (255, 255, 255), (0, i * espacio), (self.ancho, i * espacio), grosor)  # Dibujar línea horizontal
-            pygame.draw.line(tablero_surface, (255, 255, 255), (i * espacio, 0), (i * espacio, self.altura), grosor)  # Dibujar línea vertical
+            pygame.draw.line(tablero_surface, (0, 0, 0), (0, i * espacio), (self.ancho, i * espacio), grosor)  # Dibujar línea horizontal
+            
+            pygame.draw.line(tablero_surface, (0, 0, 0), (i * espacio, 0), (i * espacio, self.altura), grosor)  # Dibujar línea vertical
     
         for i in range(9):
             for j in range(9):
@@ -55,14 +56,10 @@ class Juego:
     def click(self, pos):
         if pos[0] < self.ancho and pos[1] < self.altura:  # Verificar si el usuario hizo clic en una posición válida en el tablero
             espacio = self.ancho / 9
-            x = (pos[0])  // espacio
-            y = (pos[1])// espacio
+            x = (pos[0]) // espacio
+            y = (pos[1]) // espacio
             return (y, x)
-        elif pos[0] <= 60 and pos[1] >= 540:  # Si se hizo clic en el icono '?', mostrar mensaje de ayuda
-            ayudaStr = "Presiona 1-9 para ingresar un número\n" \
-                        "Presiona ENTER para colocarlo en el tablero\n" \
-                        "Presiona BACKSPACE para borrar un número. ¡Diviértete!"
-            util.mostrarMensaje("Ayuda", ayudaStr)
+        
         else:
             return None
 

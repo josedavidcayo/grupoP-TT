@@ -2,13 +2,16 @@ from random import randint
 
 #LogicaTablero
 class Tablero:
+    dificultad = 1; # facil 5 casilleros vacios
+
     def __init__(self):
         self.tablero = [[0] * 9 for _ in range(9)]
         self.generarTablero()
 
     def generarTablero(self):
         self.llenarTodasLasCajas()
-        self.eliminarElementos(3)
+        if self.dificultad == 1:
+            self.eliminarElementos(15)
 
     def llenarTodasLasCajas(self):
         flag = [False for _ in range(9)]
