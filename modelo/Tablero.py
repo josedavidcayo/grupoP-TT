@@ -1,5 +1,6 @@
 from random import randint
 
+#LogicaTablero
 class Tablero:
     def __init__(self):
         self.tablero = [[0] * 9 for _ in range(9)]

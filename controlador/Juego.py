@@ -1,9 +1,9 @@
 import pygame
 from modelo.Tablero import Tablero
-from modelo.Caja import Caja
+from vista.Caja import Caja
 import util.util as util
 
-
+#JuegoController
 class Juego:
     def __init__(self, ancho, altura):
         self.tablero = Tablero()

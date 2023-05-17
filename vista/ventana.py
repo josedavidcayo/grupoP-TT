@@ -2,7 +2,7 @@ import pygame
 import time
 import util.util as util
 import os
-from modelo.Juego import Juego
+from controlador.Juego import Juego
 
 
 def redibujarVentana(ventana, tablero, tiempo):
