@@ -36,7 +36,7 @@ def redibujarVentana(ventana, tablero, tiempo):
 
     btn_creditos=pygame.Rect(540,340,150,50)
     pygame.draw.rect(ventana,(100,100,100),btn_creditos,0)
-
+    
     btn_verificar=pygame.Rect(540,420,150,50)
     pygame.draw.rect(ventana,(100,100,100),btn_verificar,0)
 
