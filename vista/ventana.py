@@ -28,17 +28,15 @@ def redibujarVentana(ventana, tablero, tiempo):
     ventana.blit(textoTiempo, (20, 555))  # Dibujar el tiempo en la esquina inferior izquierda
     
     #creando botones --> Despues modularizo
-    btn_nuevo=pygame.Rect(540,180,150,50)
-    pygame.draw.rect(ventana,(100,100,100),btn_nuevo,0)    
-
-    btn_opciones=pygame.Rect(540,260,150,50)
-    pygame.draw.rect(ventana,(100,100,100),btn_opciones,0)
-
-    btn_creditos=pygame.Rect(540,340,150,50)
-    pygame.draw.rect(ventana,(100,100,100),btn_creditos,0)
     
-    btn_verificar=pygame.Rect(540,420,150,50)
-    pygame.draw.rect(ventana,(100,100,100),btn_verificar,0)
+    btn_nuevo=pygame.image.load("./img/btn_Nuevo.png")  
+    ventana.blit(btn_nuevo,(540,180)) 
+
+    btn_opciones=pygame.image.load("./img/btn_Opciones.png")
+    ventana.blit(btn_opciones,(540,260))
+
+    btn_creditos=pygame.image.load("./img/btn_Creditos.png")
+    ventana.blit(btn_creditos,(540,340))
 
 
 def main():
