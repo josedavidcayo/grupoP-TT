@@ -28,6 +28,7 @@ def redibujarVentana(ventana, tablero, tiempo):
     ventana.blit(textoTiempo, (20, 555))  # Dibujar el tiempo en la esquina inferior izquierda
     
     #creando botones --> Despues modularizo
+    
     btn_nuevo=pygame.image.load("./img/btn_Nuevo.png")  
     ventana.blit(btn_nuevo,(540,180)) 
 
