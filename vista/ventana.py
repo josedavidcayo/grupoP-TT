@@ -27,6 +27,17 @@ def redibujarVentana(ventana, tablero, tiempo):
     fuente = pygame.font.Font(rutaFuente, 26)
     textoTiempo = fuente.render("Tiempo: " + util.formatearTiempo(tiempo), 1, Color.negro)
     ventana.blit(textoTiempo, (20, 555))  # Dibujar el tiempo en la esquina inferior izquierda
+    
+    #creando botones --> Despues modularizo
+    
+    btn_nuevo=pygame.image.load("./img/btn_Nuevo.png")  
+    ventana.blit(btn_nuevo,(540,180)) 
+
+    btn_opciones=pygame.image.load("./img/btn_Opciones.png")
+    ventana.blit(btn_opciones,(540,260))
+
+    btn_creditos=pygame.image.load("./img/btn_Creditos.png")
+    ventana.blit(btn_creditos,(540,340))
 
 
 def main():
