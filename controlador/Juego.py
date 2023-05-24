@@ -1,17 +1,22 @@
 import pygame
 from modelo.Tablero import Tablero
+from modelo.Modo import Modo
 from vista.Caja import Caja
 import util.util as util
+import vista.Color as Color
 
 #JuegoController
 class Juego:
     def __init__(self, ancho, altura):
-        self.tablero = Tablero()
+        self.modo = Modo()
+
+        self.tablero = Tablero(self.modo)
         self.filas = self.columnas = 9
         self.cajas = [[Caja(self.tablero.tablero[i][j], i, j, ancho, altura) for j in range(9)] for i in range(9)]
         self.ancho = ancho
         self.altura = altura
         self.seleccionada = None
+        
 
     def colocar(self, valor):
         fila, columna = self.seleccionada
@@ -29,9 +34,9 @@ class Juego:
                 grosor = 4
             else:
                 grosor = 1
-            pygame.draw.line(tablero_surface, (0, 0, 0), (0, i * espacio), (self.ancho, i * espacio), grosor)  # Dibujar línea horizontal
+            pygame.draw.line(tablero_surface, Color.negro, (0, i * espacio), (self.ancho, i * espacio), grosor)  # Dibujar línea horizontal
             
-            pygame.draw.line(tablero_surface, (0, 0, 0), (i * espacio, 0), (i * espacio, self.altura), grosor)  # Dibujar línea vertical
+            pygame.draw.line(tablero_surface, Color.negro, (i * espacio, 0), (i * espacio, self.altura), grosor)  # Dibujar línea vertical
     
         for i in range(9):
             for j in range(9):

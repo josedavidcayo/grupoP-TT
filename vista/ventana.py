@@ -3,17 +3,18 @@ import time
 import util.util as util
 import os
 from controlador.Juego import Juego
+import vista.Color as Color
 
 
 def redibujarVentana(ventana, tablero, tiempo):
-    ventana.fill((0, 0, 0))
+    ventana.fill(Color.blanco)
 
     bgVentana = pygame.image.load('img/sud-base.png')
     bgVentana = pygame.transform.scale(bgVentana, ventana.get_size())
     ventana.blit(bgVentana, (0, 0))
 
     tablero_surface = pygame.Surface((400, 400))
-    tablero_surface.fill((255, 255, 255))
+    tablero_surface.fill(Color.blanco)
     tablero.dibujar(tablero_surface)
 
     #Btn cerrar
@@ -24,7 +25,7 @@ def redibujarVentana(ventana, tablero, tiempo):
     rutaActual = os.path.dirname(os.path.abspath(__file__))
     rutaFuente = os.path.join(rutaActual, "../fuente/ComicNeue_Bold.otf")
     fuente = pygame.font.Font(rutaFuente, 26)
-    textoTiempo = fuente.render("Tiempo: " + util.formatearTiempo(tiempo), 1, (0, 0, 0))
+    textoTiempo = fuente.render("Tiempo: " + util.formatearTiempo(tiempo), 1, Color.negro)
     ventana.blit(textoTiempo, (20, 555))  # Dibujar el tiempo en la esquina inferior izquierda
 
 
