@@ -20,9 +20,6 @@ class Tablero:
     def get_tablero(self):
         return self.tablero
 
-
-
-
 #funcion para ver el tablero y el valor de cada celda
 
 def ver_tablero(): 
@@ -39,15 +36,15 @@ def ingresa_dato():
     error_dato=False
     try:
         dato=int(input("Numero a ingresar: "))
-        comprueba(dato)
+        error_dato=comprueba(dato)
         if error_dato:
             print("Debes ingresar un numero entre 1 y 9")
         fila=int(input("En que fila ?: "))
-        comprueba(fila)
+        error_dato=comprueba(fila)
         if error_dato:
             print("Debes ingresar un numero entre 1 y 9")
         columna=int(input("Y en que columna?: "))
-        comprueba(columna)
+        error_dato=comprueba(columna)
         if error_dato:
             print("Debes ingresar un numero entre 1 y 9")
     except Exception:
