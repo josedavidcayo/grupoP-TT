@@ -8,6 +8,9 @@ class Tablero:
         self.tablero = [[0] * 9 for _ in range(9)]
         self.generarTablero()
     
+    def vaciarTablero(self):
+        self.tablero = [[0] * 9 for _ in range(9)]
+
     def getTablero(self):
         return self.tablero
 
