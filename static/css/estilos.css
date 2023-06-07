@@ -1,0 +1,35 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+
+    background-color: lightslategrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    border: 2px solid white;
+    padding: 30px;
+    background-color: coral;
+
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+
+    border-radius: 25px;
+    
+}
+
+h1 {
+    color: whitesmoke;
+    margin: 5px;
+    padding: 5px;
+}
