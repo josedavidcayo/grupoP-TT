@@ -1,8 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block body %}
-
-<div class="container">
+<header>
+    <nav class="nav-container">
+        <div class="nav-item">Dificultad</div>
+        <div class="nav-item">Intentos</div>
+        <div class="nav-item">Puntos</div>
+        <div class="nav-item">
+            <h2 id="timer">00:00:00</h2>
+        </div>
+    </nav>
+</header>
+<main>
+    <div id="sudoku-board"></div>
+    <div class="option-container">
+        <div class="option-item">volver</div>
+        <div class="option-item">borrar</div>
+    </div>
+</main>
+<footer></footer>
+<!--<div class="container">
     <h1>
         Sudoku MDI
     </h1>
@@ -10,5 +27,5 @@
         Metodologia de la investigacion 
     </h2>
     
-</div>
+</div>-->
 {% endblock %}
