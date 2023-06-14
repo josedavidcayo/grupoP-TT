@@ -53,7 +53,7 @@ def validar_movimiento(sudoku, fila, columna, numero):
 sudoku = generar_sudoku()
 
 # Determina la cantidad de celdas vacías
-num_celdas_vacias = random.randint(4, 7)
+num_celdas_vacias = random.randint(7, 10)
 
 # Vacía algunas celdas del sudoku
 for _ in range(num_celdas_vacias):
