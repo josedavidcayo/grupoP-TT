@@ -10,14 +10,15 @@ from utils.sudoku_solver import SudokuBoard
 pygame.init()
 
 # set width/height del juego
-width, height = 480, 800
+width, height = 480, 700
 surface = pygame.display.set_mode((width, height))
 
 clock = pygame.time.Clock()
 
 # global colors
 color_white = (255, 255, 255)
-safety_base_color = pygame.Color('#66A0BF')
+#safety_base_color = pygame.Color('#66A0BF')
+safety_base_color = pygame.Color('#0D151B')
 safety_base_inverse = pygame.Color(255-safety_base_color.r, 255-safety_base_color.b, 255-safety_base_color.g)
 safety_secondary_color = pygame.Color('#4CC2F0')
 safety_secondary_inverse = pygame.Color(255-safety_secondary_color.r, 255-safety_secondary_color.b, 255-safety_secondary_color.g)
