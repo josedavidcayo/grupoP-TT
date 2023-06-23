@@ -10,14 +10,13 @@ from utils.sudoku_solver import SudokuBoard
 pygame.init()
 
 # set width/height del juego
-width, height = 480, 700
+width, height = 480, 800
 surface = pygame.display.set_mode((width, height))
 
 clock = pygame.time.Clock()
 
 # global colors
 color_white = (255, 255, 255)
-#safety_base_color = pygame.Color('#66A0BF')
 safety_base_color = pygame.Color('#0D151B')
 safety_base_inverse = pygame.Color(255-safety_base_color.r, 255-safety_base_color.b, 255-safety_base_color.g)
 safety_secondary_color = pygame.Color('#4CC2F0')
@@ -62,7 +61,7 @@ class GameBoard:
 
         return
 
-    def oncall(self, diff: str = "beginner"):
+    def oncall(self, diff: str = "principiante"):
         """teclas para que el juego setee la dificultad del tablero y, si no está activo, dibuje el tablero"""
         self.difficulty = diff
         if not self._active:
@@ -492,7 +491,7 @@ class MainMenu:
         self.logo = pygame.transform.scale(self.logo, (700, 700))
         self.logo = pygame.transform.rotate(self.logo, 0)
 
-        self.difficulty = ['Principiante', 'Fácil', 'Medio', 'Difícil', 'Extremo']
+        self.difficulty = ['Principiante', 'Facil', 'Medio', 'Dificil', 'Extremo']
         self.diff_iter = 0
 
     def diff(self):
@@ -621,7 +620,7 @@ def main():
     theme = ColorTheme()
     main_menu()
     pygame.display.flip()
-    difficulty = "Principiante"
+    difficulty = "principiante"
     theme_stat = False
     set_scene = -1  # 0 menu, 1 board, 2 end popup
     current_scene = 0

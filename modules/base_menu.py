@@ -16,7 +16,7 @@ class MainMenu:
         self.logo = pygame.transform.scale(self.logo, (300, 300))
         self.logo = pygame.transform.rotate(self.logo, -30)
 
-        self.difficulty = ['Principiante', 'Fácil', 'Medio', 'Difícil', 'Extremo']
+        self.difficulty = ['Principiante', 'Facil', 'Medio', 'Dificil', 'Extremo']
         self.diff_iter = 0
 
     def diff(self):

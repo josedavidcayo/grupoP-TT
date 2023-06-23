@@ -45,7 +45,7 @@ class GameBoard:
 
         return
 
-    def oncall(self, diff: str = "Principiante"):
+    def oncall(self, diff: str = "principiante"):
         """Establece la dificultad del tablero y, si no está activo, dibuja el tablero"""
         self.difficulty = diff
         if not self._active:
